@@ -1,3 +1,3 @@
 <div align="center">
-<h2> Matlab Basics </h2>
+<h1> Matlab Basics </h1>
 </div>
