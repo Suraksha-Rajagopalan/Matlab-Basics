@@ -69,3 +69,31 @@ inv(a)
 a.^3   %power element by element 
 a.*4   %scalar multiplication
 ```
+
+## Power of a signal :
+
+Power is defined as the amount of energy consumed per unit time. This quantity is useful if the energy of the signal goes to infinity or the signal is “not-squarely-summable”. 
+
+<img src = "https://user-images.githubusercontent.com/91787553/202886063-3f473e88-a4a2-4fb0-97bb-c773e46021fc.png" width = 250>
+
+```matlab
+function [p] = sigpower(n)
+    b = n.*n;
+    p = sum(b)/length(b);
+end
+```
+
+## Energy of a signal :
+
+A signal is said to be an energy signal if and only if its total energy E is finite, i.e., 0 < 𝐸 < ∞. For an energy signal, the average power P = 0. The nonperiodic signals are the examples of energy signals.
+
+<img src = "https://user-images.githubusercontent.com/91787553/202886219-a9068a0d-1318-41e2-805f-a82756e74590.png" width = 200>
+
+```matlab
+function [s] = energy(n)
+    n = n.*n;
+    s = sum(n);
+end
+```
+
+
