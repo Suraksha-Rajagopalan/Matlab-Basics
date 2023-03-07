@@ -183,4 +183,49 @@ A convolution is an integral that expresses the amount of overlap of one functio
 ![image](https://user-images.githubusercontent.com/91787553/209512190-3bf879fe-0982-494f-8986-54059afe85f0.png)
 
 
+## Fourier Transform:
+The Fourier Transform is a tool that breaks a waveform (a function or signal) into an alternate representation, characterized by the sine and cosine functions of varying frequencies. The Fourier Transform shows that any waveform can be re-written as the sum of sinusoidals.
 
+All waveforms, no matter what you scribble or observe in the universe, are actually just the sum of simple sinusoids of different frequencies.
+While this seems made up, it is true for all waveforms. This goes for TV signals, cell phone signals, the sound waves that travel when you speak. In general, waveforms are not made up of a discrete number of frequencies, but rather a continuous range of frequencies.
+
+The Fourier Transform is the mathematical tool that shows us how to deconstruct the waveform into its sinusoidal components. This has a multitude of applications, aides in the understanding of the universe, and just makes life much easier for the practicing engineer or scientist.
+
+### Fourier Series
+
+The Fourier Series breaks down a periodic function into the sum of sinusoidal functions. It is the Fourier Transform for periodic functions. To start the analysis of Fourier Series, let's define periodic functions.
+A function is periodic, with fundamental period T, if the following is true for all t:
+
+f(t+T)=f(t)                      [Equation 1]
+
+In plain English, this means that the a function of time with period T will have the same value in T seconds as it does now, no matter when you observe the function. Note that a periodic function with fundamental period T is also periodic with period 2*T. So the fundamental period is the value of T (greater than zero) that is the smallest possible T for which equation [1] is always true.
+
+The Fourier Series showed us how to rewrite any periodic function into a sum of sinusoids. The Fourier Transform is the extension of this idea to non-periodic functions.
+
+While the the Fourier Transform is a beautiful mathematical tool, its widespread popularity is due to its practical application in virtually every field of science and engineering. It's hard to understand why the Fourier Transform is so important. But I can assure you it enables the solution to difficult problems be made simpler (and also makes previously unsolved problems solvable). In addition, the Fourier Transform gives us a new method of viewing the world, which is fantastic for giving a more intuitive feel for our universe.
+
+
+<div align=center>
+<img src="https://user-images.githubusercontent.com/91787553/223367872-6a0476cf-5651-4767-a9a2-d746d78dd0bc.png">
+</div>
+
+```matlab
+load enso;
+f = fit(month,pressure,'fourier2')
+plot(f,month,pressure)
+``` 
+
+Here, 
+f = 
+     General model Fourier2:
+     f(x) =  a0 + a1*cos(x*w) + b1*sin(x*w) + 
+               a2*cos(2*x*w) + b2*sin(2*x*w)
+     Coefficients (with 95% confidence bounds):
+       a0 =       10.63  (10.23, 11.03)
+       a1 =       2.923  (2.27, 3.576)
+       b1 =       1.059  (0.01593, 2.101)
+       a2 =     -0.5052  (-1.086, 0.07532)
+       b2 =      0.2187  (-0.4202, 0.8576)
+       w =      0.5258  (0.5222, 0.5294)
+       
+Source: <a href="https://www.mathworks.com/help/curvefit/fourier.html">Fourier_Matlab</a>
